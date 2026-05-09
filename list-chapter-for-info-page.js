@@ -71,6 +71,7 @@
       return {
         title:   h1.textContent.trim(),
         url:     post.url,
+        published: new Date(post.published),
         vol, volNum,
         chapNum: parseInt((h1.textContent.match(/\d+/) || [0])[0], 10)
       };
@@ -96,7 +97,7 @@
       volKeys.forEach(vol => {
         html += `<p class="volumne">${vol}</p>`;
         volumes[vol].chapters
-          .sort((a, b) => b.chapNum - a.chapNum)
+          .sort((a, b) => b.published - a.published)
           .forEach(ch => { html += `<a target="_blank" href="${ch.url}">${ch.title}</a><br />`; });
       });
 
@@ -113,7 +114,8 @@
       do {
         const params = new URLSearchParams({
           key: cfg.apiKey, labels, maxResults: PAGE_SIZE,
-          fetchBodies: 'true', status: 'live'
+          fetchBodies: 'true', status: 'live',
+          fields: 'nextPageToken,items(title,url,content,published)'
         });
         if (pageToken) params.set('pageToken', pageToken);
 
