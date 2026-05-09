@@ -37,6 +37,7 @@
     const loading = document.createElement('div');
     loading.id          = 'toc-loading';
     loading.textContent = 'Đang tải mục lục...';
+    loading.style.textAlign = 'center';
 
     const list = document.createElement('ul');
     list.className    = 'listChapter';
