@@ -96,7 +96,7 @@
         html += `<p class="volumne">${vol}</p>`;
         volumes[vol].chapters
           .sort((a, b) => b.chapNum - a.chapNum)
-          .forEach(ch => { html += `<a href="${ch.url}">${ch.title}</a><br />`; });
+          .forEach(ch => { html += `<a target="_blank" href="${ch.url}">${ch.title}</a><br />`; });
       });
 
       list.innerHTML     = html;
