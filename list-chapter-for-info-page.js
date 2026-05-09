@@ -1,5 +1,5 @@
 /*!
- * blogger-toc.js — Mục lục truyện tự động cho Blogger
+ * list-chapter-for-info-page.js — Mục lục truyện tự động cho Blogger
  * Host lên GitHub → dùng qua jsDelivr CDN
  * https://cdn.jsdelivr.net/gh/YOUR-USER/YOUR-REPO@main/toc.js
  *
