@@ -94,13 +94,18 @@
       }
 
       let html = '';
+      
       volKeys.forEach(vol => {
-        html += `<p class="volumne">${vol}</p>`;
+        // Chỉ hiện dòng tên quyển nếu có volX, bỏ qua nhãn "Chưa phân quyển"
+        if (vol !== 'Chưa phân quyển') {
+          html += `<p class="volumne">${vol}</p>`;
+        }
+      
         volumes[vol].chapters
           .sort((a, b) => b.published - a.published)
-          .forEach(ch => { html += `<a target="_blank" href="${ch.url}">${ch.title}</a><br />`; });
+          .forEach(ch => { html += `<a href="${ch.url}">${ch.title}</a><br />`; });
       });
-
+      
       list.innerHTML     = html;
       loading.style.display = 'none';
       list.style.display    = '';
