@@ -16,15 +16,17 @@
   'use strict';
 
   const PAGE_SIZE = 500;
+  const BLOG_ID = '3643810072002542931';
+  const API_KEY = 'AIzaSyBJv3-tWbQ1J5yed1E2Y-NHzQtTrtlX6zY';
 
   function init() {
     const root = document.getElementById('toc-root');
     if (!root) return;
 
     const cfg = {
-      blogId:       root.dataset.blogId,
-      apiKey:       root.dataset.apiKey,
-      storyLabel:   root.dataset.storyLabel   || 'chapter',
+      blogId:       BLOG_ID,
+      apiKey:       API_KEY,
+      storyLabel:   root.dataset.storyLabel   || '',
       chapterLabel: root.dataset.chapterLabel || 'chapter',
     };
 
