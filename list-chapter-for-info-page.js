@@ -105,7 +105,7 @@
       
         volumes[vol].chapters
           .sort((a, b) => b.published - a.published)
-          .forEach(ch => { html += `<a href="${ch.url}">${ch.title}</a><br />`; });
+          .forEach(ch => { html += `<a target="_blank" href="${ch.url}">${ch.title}</a><br />`; });
       });
       
       list.innerHTML     = html;
