@@ -4,13 +4,10 @@
  * https://cdn.jsdelivr.net/gh/YOUR-USER/YOUR-REPO@main/toc.js
  *
  * Cách dùng trong Blogger Page/Post:
- *   <div id="toc-root"
- *        data-blog-id="1234567890"
- *        data-api-key="AIza..."
- *        data-story-label="ten-truyen"
- *        data-chapter-label="chapter">
- *   </div>
- *   <script src="https://cdn.jsdelivr.net/gh/YOUR-USER/YOUR-REPO@main/toc.js" defer></script>
+ *   <div id="toc-root" data-story-label="list-chapter"></div>
+ *   
+ * Chèn vào thẻ head ở file chủ đề
+ *   <script src="https://cdn.jsdelivr.net/gh/YOUR-USER/YOUR-REPO@main/toc.js"></script>
  */
 (function () {
   'use strict';
@@ -20,7 +17,7 @@
   const API_KEY = 'AIzaSyBJv3-tWbQ1J5yed1E2Y-NHzQtTrtlX6zY';
 
   function init() {
-    const root = document.getElementById('toc-root');
+    const root = document.getElementById('list-chapter');
     if (!root) return;
 
     const cfg = {
